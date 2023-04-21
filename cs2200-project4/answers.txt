@@ -1,0 +1,51 @@
+CS 2200 Fall 2022
+Project 4
+
+Name: Panya Bhinder
+GT Username: pbhinder3
+
+Problem 1B (FCFS Scheduler)
+----------
+CPU 1: avg exec. time = 67.60 s
+CPU 2: avg exec. time = 35.80 s
+CPU 4: avg exec. time = 33.32 s
+
+The avg execution time does not indicate a linear relationship. The decrease in execution time
+from 1 CPU to 2 is much larger than the decrease from 2 to 4, meaning the relationship cannot
+be linear. This is because when the CPU increases from 1 to 2 there is more significant CPU
+utilization but when increased from 2 to 4 the improvement is less significant since there are 
+still there are still the same number of processes running and it's not enough to significantly 
+benefit from the increase of 2 to 4 cores. 
+
+
+
+Problem 2B (Round-Robin)
+----------
+200 ms timeslice: total wait time = 285.2
+400 ms timeslice: total wait time = 298.8
+800 ms timeslice: total wait time = 325.4
+
+As the timeslice increases, the wait time also increases fairly linearly. In a real OS, the 
+shortest timeslice is not usually the best because the CPU will switch between processes 
+more often and use up a lot of time switching compared to the duration of the timeslice making 
+it less efficient.
+
+
+Problem 3B (Preemptive Priority)
+----------
+A technique to mitigate starvation is aging. Starvation occurs when lower priority jobs end up waiting 
+for a long time if higher priority jobs continue to enter the system, so aging gives preference to a job 
+that has been waiting in the ready queue for a longer time. This adds another quality that priority takes 
+into account so that when the age of a job passes a certain limit, it will override other priority principlees 
+and give the older job a priority for scheduling. 
+
+
+Problem 4 (The Priority Inversion Problem)
+---------
+One solution to the priority inversion problem is to give a shared process such as the mutex a high priority 
+principle of its own. This method prevents the processes from getting preempted until they give up the shared 
+mutex resource since the mutex has the highest priority compared to any other process. 
+
+
+
+
